@@ -1,6 +1,5 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const pageTitle = "About Me";
@@ -40,9 +39,7 @@ const textCase = "uppercase";
 <meta name="generator" content={Astro.generator} />
 <title>{pageTitle}</title>
 
-<body>
-  <Header />
-  <h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
   <h2>... and my new Astro site!</h2>
 
   <p>
@@ -82,8 +79,4 @@ const textCase = "uppercase";
   <p>My skills are:</p><p></p><ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
-  <Footer />
-  <script>
-    import "../scripts/menu.js";
-  </script>
-</body>
+</BaseLayout>
